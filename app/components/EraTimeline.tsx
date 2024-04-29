@@ -25,7 +25,7 @@ export function EraTimeline(props: EraTimelineProps) {
                     <div className='stack items-center justify-center'>
                         {
                             props.collection.cretaceous.map((dino) => {
-                                return <DinoButton name={dino.name}
+                                return <DinoButton  key={dino.name} name={dino.name}
                                                     avatar={dino.avatar}
                                                     description={dino.description}
                                                     assistantId={dino.assistantId}
@@ -45,7 +45,7 @@ export function EraTimeline(props: EraTimelineProps) {
                     </Timeline.Body>
                     {
                         props.collection.jurassic.map((dino) => {
-                            return <DinoButton name={dino.name}
+                            return <DinoButton key={dino.name} name={dino.name}
                                                avatar={dino.avatar}
                                                description={dino.description}
                                                assistantId={dino.assistantId}
@@ -64,7 +64,7 @@ export function EraTimeline(props: EraTimelineProps) {
                     </Timeline.Body>
                     {
                         props.collection.triassic.map((dino) => {
-                            return <DinoButton name={dino.name}
+                            return <DinoButton key={dino.name} name={dino.name}
                                                avatar={dino.avatar}
                                                description={dino.description}
                                                assistantId={dino.assistantId}
