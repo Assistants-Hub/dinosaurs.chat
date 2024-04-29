@@ -3,8 +3,13 @@
 import { Timeline} from "flowbite-react";
 import { HiCalendar } from "react-icons/hi";
 import DinoButton from "@/app/components/DinoButton";
+import {DinosaurCollection} from "@/app/dinosaur";
 
-export function EraTimeline() {
+export interface EraTimelineProps {
+    collection: DinosaurCollection
+}
+
+export function EraTimeline(props: EraTimelineProps) {
     return (
         <Timeline>
             <Timeline.Item>
@@ -13,13 +18,21 @@ export function EraTimeline() {
                     <Timeline.Time>145 million years ago - 66 million years ago</Timeline.Time>
                     <Timeline.Title>Cretaceous Period</Timeline.Title>
                     <Timeline.Body>
-                        The Cretaceous saw continents drift further. Flowering plants flourished, while massive herbivores like Argentinosaurus roamed. The reign ended with a bang – a giant asteroid impact that wiped out the dinosaurs.
+                        The Cretaceous saw continents drift further. Flowering plants flourished, while massive
+                        herbivores like Argentinosaurus roamed. The reign ended with a bang – a giant asteroid impact
+                        that wiped out the dinosaurs.
                     </Timeline.Body>
-                    <DinoButton name={"Tyrannosaurus Rex"}
-                                avatar={'/images/dinos/tyrannosaurus-rex-avatar.png'}
-                                description={"The ground trembles with every thunderous step I take. From my tiny nostrils, I catch the scent of prey on the wind. My powerful jaws gnash with anticipation, a row of serrated daggers ready to tear flesh.  With a deafening roar that shakes the very trees, I charge forward, a whirlwind of teeth and fury.  Nothing escapes the terror that is Tyrannosaurus Rex!"}
-
-                    />
+                    <div className='stack items-center justify-center'>
+                        {
+                            props.collection.cretaceous.map((dino) => {
+                                return <DinoButton name={dino.name}
+                                                    avatar={dino.avatar}
+                                                    description={dino.description}
+                                                    assistantId={dino.assistantId}
+                                />
+                            })
+                        }
+                    </div>
                 </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -30,10 +43,15 @@ export function EraTimeline() {
                     <Timeline.Body>
                         This was a golden age for dinosaurs. Lush forests thrived under warm, humid skies as Pangaea continued to break apart. Giants like Brachiosaurus emerged, making it a time of impressive diversity and colossal creatures.
                     </Timeline.Body>
-                    <DinoButton name={"Stegosaurus"}
-                                avatar={'/images/dinos/stegosaurus-avatar.png'}
-                                description={"The ferns are high, perfect for munching! My bony plates catch the warm sunlight as I lumber through the forest. Watch out little ferns, here I come! But if any hungry meat-eater gets too close, my spiked tail swings with a mighty WHACK!  These plates may look heavy, but they're my best defense. There's no stopping a Stegosaurus on a mission for tasty plants!"}
-                    />
+                    {
+                        props.collection.jurassic.map((dino) => {
+                            return <DinoButton name={dino.name}
+                                               avatar={dino.avatar}
+                                               description={dino.description}
+                                               assistantId={dino.assistantId}
+                            />
+                        })
+                    }
                 </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -44,6 +62,15 @@ export function EraTimeline() {
                     <Timeline.Body>
                         In the shadow of super continent Pangaea, the Triassic witnessed the rise of the first small dinosaurs amidst a hot, dry landscape.
                     </Timeline.Body>
+                    {
+                        props.collection.triassic.map((dino) => {
+                            return <DinoButton name={dino.name}
+                                               avatar={dino.avatar}
+                                               description={dino.description}
+                                               assistantId={dino.assistantId}
+                            />
+                        })
+                    }
                 </Timeline.Content>
             </Timeline.Item>
         </Timeline>

@@ -8,12 +8,11 @@ export default function DinoButton(props:Dinosaur) {
     const handleClose = () => setIsOpen(false);
     return (
         <>
-
             <Avatar img={`${props.avatar}`} size="xl" rounded onClick={() => {
                 setIsOpen(true)
             }}/>
             <div className="text-center text-sm font-semibold dark:text-white">{props.name}</div>
-            <Modal show={isOpen} size="xl" onClose={handleClose} popup>
+            <Modal show={isOpen} onClose={handleClose} popup>
                 <Modal.Header title={props.name}/>
                 <Modal.Body>
                     <div className="grid grid-cols-12 ">
@@ -22,12 +21,12 @@ export default function DinoButton(props:Dinosaur) {
                             {props.description}
                         </div>
                     </div>
-                    <div className="items-center justify-center">
+                    <div className="items-center justify-center bg-red-500">
                         <iframe
-                            src="https://www.assistantshub.ai/embed/asst_g01HWJYW60YCW00QXGW3TCT3JZE?style=window-frameless"
-                            style={{height: "500px", border: "0 none;", width: "480px", minWidth: "340px"}}
+                            src={`https://www.assistantshub.ai/embed/${props.assistantId}?style=window-frameless`}
+                            style={{height: "500px", border: "0 none;", width: "100%"}}
                             allowFullScreen
-                            allowTransparency className="self-center"></iframe>
+                            allowTransparency className="self-center bg-green-500"></iframe>
                     </div>
                 </Modal.Body>
             </Modal>

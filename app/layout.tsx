@@ -40,7 +40,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json"/>
         <meta name="theme-color" content="#ffffff"/>
     </head>
-    <body className={inter.className}>{children}</body>
+    <body className={inter.className} suppressHydrationWarning={process.env.NODE_ENV === 'development'}>{children}</body>
     </html>
   );
 }

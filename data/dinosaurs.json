@@ -1,0 +1,21 @@
+{
+  "cretaceous" : [
+    {
+        "name" : "Tyrannosaurus Rex",
+        "avatar" : "/images/dinos/tyrannosaurus-rex-avatar.png",
+        "description": "The ground trembles with every thunderous step I take. From my tiny nostrils, I catch the scent of prey on the wind. My powerful jaws gnash with anticipation, a row of serrated daggers ready to tear flesh.  With a deafening roar that shakes the very trees, I charge forward, a whirlwind of teeth and fury.  Nothing escapes the terror that is Tyrannosaurus Rex!",
+        "assistantId" : "asst_g01HWJYW60YCW00QXGW3TCT3JZE"
+    }
+  ],
+  "jurassic" : [
+    {
+      "name" : "Stegosaurus",
+      "avatar" : "/images/dinos/stegosaurus-avatar.png",
+      "description": "The ferns are high, perfect for munching! My bony plates catch the warm sunlight as I lumber through the forest. Watch out little ferns, here I come! But if any hungry meat-eater gets too close, my spiked tail swings with a mighty WHACK!  These plates may look heavy, but they're my best defense. There's no stopping a Stegosaurus on a mission for tasty plants!",
+      "assistantId" : "asst_g01HWJYW60YCW00QXGW3TCT3JZE"
+    }
+  ],
+  "triassic" : [
+
+  ]
+}
